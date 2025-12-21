@@ -1,5 +1,5 @@
 import express from "express";
-import { getFitnessData, addFitnessData } from "../controllers/fitness.controller.js";
+import { getFitnessData, addFitnessData, updateFitnessData, deleteFitnessData } from "../controllers/fitness.controller.js";
 
 const fitnessRoutes = express.Router();
 
@@ -8,5 +8,10 @@ fitnessRoutes.get("/:userId", getFitnessData);
 
 // Add new fitness entry
 fitnessRoutes.post("/", addFitnessData);
+
+//Update fitness entry
+fitnessRoutes.put("/:id",updateFitnessData);
+//Delete fitness entry
+fitnessRoutes.delete("/:id",deleteFitnessData);
 
 export default fitnessRoutes;

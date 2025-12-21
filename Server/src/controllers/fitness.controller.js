@@ -38,3 +38,44 @@ export const addFitnessData = async (req, res) => {
     return res.status(500).json({ message: "Internal Server Error" });
   }
 };
+// Update Fitness Data
+export const updateFitnessData = async (req, res) => {
+  try {
+    const { id } = req.params;
+    const updatedRecord = await FitnessTrack.findByIdAndUpdate(
+      id,
+      req.body,
+      {
+        new: true,
+        runValidators: true,
+      }
+    );
+
+    if (!updatedRecord) {
+      return res.status(404).json({ message: "Fitness record not found" });
+    }
+
+    return res.status(200).json(updatedRecord);
+
+  } catch (error) {
+    console.error("Update Fitness Data Error:", error);
+    return res.status(500).json({
+      message: "Failed to update fitness data",
+      error: error.message,
+    });
+  }
+};
+
+export const deleteFitnessData=async(req,res)=>{
+  try {
+    const {id}=req.params;
+    const deletedRecord=await FitnessTrack.findByIdAndDelete(id);
+    if (!deletedRecord) {
+      return res.status(404).json({ message: "Fitness record not found" });
+    }
+
+    return res.status(200).json({ message: "Fitness record deleted successfully" });
+  } catch (error) {
+     return res.status(500).json({ message: `Failed to delete fitness data,${error}` });
+  }
+}

@@ -3,17 +3,33 @@ import User from "../models/User.js";
 
 export const requireAuth = async (req, res, next) => {
   try {
-    const header = req.headers.authorization || "";
-    const token = header.startsWith("Bearer ") ? header.slice(7) : null;
-    if (!token) return res.status(401).json({ message: "Unauthorized" });
+    // 1. Get Authorization header
+    const authHeader = req.headers.authorization;
 
-    const payload = jwt.verify(token, process.env.JWT_SECRET);
-    req.user = await User.findById(payload.id).select("_id role");
-    if (!req.user) return res.status(401).json({ message: "Unauthorized" });
+    if (!authHeader || !authHeader.startsWith("Bearer ")) {
+      return res.status(401).json({ message: "Unauthorized: No token" });
+    }
 
+    // 2. Extract token
+    const token = authHeader.split(" ")[1];
+
+    // 3. Verify token (SAME secret used in login)
+    const decoded = jwt.verify(token, process.env.JWT_SECRET);
+
+    // 4. Attach user to request
+    const user = await User.findById(decoded.id).select("-password");
+
+    if (!user) {
+      return res.status(401).json({ message: "Unauthorized: User not found" });
+    }
+
+    req.user = user;
+
+    // 5. Continue
     next();
-  } catch (e) {
-    return res.status(401).json({ message: "Unauthorized" });
+  } catch (err) {
+    console.error("Auth Middleware Error:", err.message);
+    return res.status(401).json({ message: "Unauthorized: Invalid token" });
   }
 };
 
