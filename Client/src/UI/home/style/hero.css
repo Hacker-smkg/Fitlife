@@ -38,6 +38,7 @@
     font-size: 1rem;
     font-weight: 600;
     cursor: pointer;
+    background: none;
 }
 
 .watch_btn span {

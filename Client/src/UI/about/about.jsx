@@ -4,37 +4,37 @@ import "./style/about.css"
 const teamMembers = [
   {
     id: 1,
-    name: "Alex Carter",
+    name: "Soham Ata",
     role: "Strength & Conditioning Coach",
     image: "https://i.pravatar.cc/300?img=11",
     emoji: "💪"
   },
   {
     id: 2,
-    name: "Maya Singh",
+    name: "Sreejita Bera",
     role: "Yoga & Flexibility Expert",
     image: "https://i.pravatar.cc/300?img=47",
     emoji: "🧘"
   },
   {
     id: 3,
-    name: "Jordan Lee",
+    name: "Shreya Mallick",
     role: "Nutrition Specialist",
     image: "https://i.pravatar.cc/300?img=32",
     emoji: "🥗"
   },
   {
     id: 4,
-    name: "Sam Rivera",
+    name: "Souvik Chakraborty",
     role: "HIIT & Cardio Trainer",
     image: "https://i.pravatar.cc/300?img=15",
     emoji: "🔥"
   },
   {
     id: 5,
-    name: "Priya Nair",
+    name: "Soumya Ganguly",
     role: "Mindfulness & Recovery",
-    image: "https://i.pravatar.cc/300?img=44",
+    image: "https://github.com/Hacker-smkg/Fitlife/blob/main/me2.jpeg",
     emoji: "🌟"
   }
 ]
