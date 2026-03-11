@@ -6,35 +6,35 @@ const teamMembers = [
     id: 1,
     name: "Soham Ata",
     role: "Strength & Conditioning Coach",
-    image: "https://i.pravatar.cc/300?img=11",
+    image: "/soham.png",
     emoji: "💪"
   },
   {
     id: 2,
     name: "Sreejita Bera",
     role: "Yoga & Flexibility Expert",
-    image: "https://i.pravatar.cc/300?img=47",
+    image: "/sreejita.png",
     emoji: "🧘"
   },
   {
     id: 3,
     name: "Shreya Mallick",
     role: "Nutrition Specialist",
-    image: "https://i.pravatar.cc/300?img=32",
+    image: "/shreya.png",
     emoji: "🥗"
   },
   {
     id: 4,
     name: "Souvik Chakraborty",
     role: "HIIT & Cardio Trainer",
-    image: "https://i.pravatar.cc/300?img=15",
+    image: "/souvik.png",
     emoji: "🔥"
   },
   {
     id: 5,
     name: "Soumya Ganguly",
     role: "Mindfulness & Recovery",
-    image: "https://github.com/Hacker-smkg/Fitlife/blob/main/me2.jpeg",
+    image: "/me2.jpeg",
     emoji: "🌟"
   }
 ]

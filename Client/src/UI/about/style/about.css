@@ -131,7 +131,7 @@
 
 .stat-label {
   font-size: 13px;
-  color: var(--text-secondary);
+  /* color: var(--text-secondary);   there is an issue  */
   letter-spacing: 1px;
   text-transform: uppercase;
 }
